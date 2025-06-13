@@ -15,6 +15,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK", message: "node.js is running!" });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/expenses", expenseRoutes);
 
