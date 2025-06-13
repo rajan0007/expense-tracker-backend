@@ -19,6 +19,10 @@ app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK", message: "node.js is running!" });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "OK", message: "working....!" });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/expenses", expenseRoutes);
 
